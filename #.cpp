@@ -882,3 +882,392 @@ int main()
 
     return 0;
 }
+// 1101A
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    //freopen("input.txt","r", stdin);
+
+    ll t,l,r,d;
+    cin>>t;
+    while(t--){
+        ll ans = 0, div = 0;
+        cin>>l>>r>>d;
+        if(d < l){
+            ans = d;
+        }
+        else if(d <= r){
+            div = r /d;
+            div++;
+            ans = (d * div);
+        }
+        else if(d > r){
+            ans = d;
+        }
+        cout<<ans<<endl;
+    }
+
+    return 0;
+}
+// 1102A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    ll n;
+    cin>>n;
+    n %= 4;
+    if(n == 0 || n == 3){
+        cout<<0<<endl;
+    }
+    else{
+        cout<<1<<endl;
+    }
+
+    return 0;
+}
+// 1104A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    int n;
+    cin>>n;
+
+    cout<<n<<endl;
+    for(int i=0; i<n; i++){
+        cout<<1<<" ";
+    }cout<<endl;
+
+    return 0;
+}
+// 1106C
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+typedef long long LL;
+int n,a[300001],b[300001];
+LL sum = 0,temp = 0;
+int main()
+{
+    fastread();
+    scanf("%d", &n);
+    for(int i=0; i<n; i++){
+        scanf("%d", &a[i]);
+        b[i] = a[i];
+    }
+    sort(a,a+n);
+    sort(b,b+n,greater<int>());
+    for(int i=0; i<n/2; i++){
+        temp = (a[i] + b[i]) * (a[i] + b[i]);
+        sum += 1LL * temp;
+    }
+    printf("%lld\n",sum);
+
+    return 0;
+}
+// 1107A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    int t,n;
+    cin>>t;
+    while(t--){
+        string s,a,b;
+        cin>>n>>s;
+        for(int i=0; i<1; i++){
+            a += s[i];
+        }
+        for(int i=1; i<n; i++){
+            b += s[i];
+        }
+        if(a[0] >= b[0] && b.length() == 1){
+            cout<<"NO\n";
+        }
+        else{
+            cout<<"YES"<<endl<<2<<endl;
+            cout<<a[0]<<" ";
+            for(int i=0; i<b.length(); i++){
+                cout<<b[i];
+            }cout<<endl;
+        }
+    }
+
+    return 0;
+}
+// 1108A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    int t;
+    ll L,R,l,r;
+    cin>>t;
+    while(t--){
+        cin>>L>>R>>l>>r;
+        if(R == r){
+            cout<<R-1<<" "<<r<<endl;
+        }
+        else{
+            cout<<R<<" "<<r<<endl;
+        }
+
+    }
+
+    return 0;
+}
+// 1110A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+typedef long long LL;
+int main()
+{
+    fastread();
+    ll b,k,a[100001];
+    cin>>b>>k;
+    for(ll i=0; i<k; i++){
+        cin>>a[i];
+    }
+    ll sum = 0,j = 0;
+    j = k - 1;
+    for(int i=0; i<k; i++){
+        if(i+1 == k){
+            sum += a[i];
+        }
+        else{
+            sum += 1LL * a[i] * b;
+        }
+    }
+    //cout<<sum<<endl;
+    if(sum % 2 == 0){
+        cout<<"even\n";
+    }
+    else{
+        cout<<"odd\n";
+    }
+
+
+    return 0;
+}
+// 1111A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    int n,m;
+    string s,t;
+    cin>>s>>t;
+    n = s.length();
+    m = t.length();
+    if(n != m){
+        cout<<"NO"<<endl;
+        return 0;
+    }
+    int ok = 0;
+    for(int i=0; i<n; i++){
+        if((s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') && (t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u')){
+            ok = 1;
+        }
+        else if((s[i] != 'a' && s[i] != 'e' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u') && (t[i] != 'a' && t[i] != 'e' && t[i] != 'i' && t[i] != 'o' && t[i] != 'u')){
+            ok = 1;
+        }
+        else{
+            ok = 0;
+            break;
+        }
+    }
+
+    if(ok == 1){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
+// 1114A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll              long long
+#define ull             unsigned long long
+#define pb              push_back
+#define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+using namespace std;
+int main()
+{
+    fastread();
+    int x,y,z;
+    int a,b,c;
+    cin>>x>>y>>z;
+    cin>>a>>b>>c;
+    int Andrew = 0, Dmitry = 0, Michal = 0;
+    if(a>= x){
+        Andrew = 1;
+        b += a - x;
+    }
+    if(b >= y){
+        Dmitry = 1;
+        c += b - y;
+    }
+    if(c >= z){
+        Michal = 1;
+    }
+    if( (Andrew == 1 && Dmitry == 1 ) && Michal == 1){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+
+
+    return 0;
+}
+// 1118A
+//Bismillahir Rahmanir Rahim
+#include<bits/stdc++.h>
+#define ll long long
+#define ull unsigned long long
+using namespace std;
+int main()
+{
+    int t,a,b;
+    cin>>t;
+    while(t--)
+    {
+        ll n,ans = 0;
+        cin>>n>>a>>b;
+        if(a * 2 < b){
+            ans = n * a;
+        }
+        else{
+            ll mod = n % 2;
+            ans = (n / 2) * b + (mod * a);
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
+// 1121A
+#include<bits/stdc++.h>
+using namespace std;
+const int MXN = 5e5 + 30;
+int ans=0;
+int a[MXN],b[MXN];
+int main()
+{
+    int n,m,k;
+    int i,j,x;
+    cin>>n>>m>>k;
+    for(i=1; i<=n; i++)
+        cin>>a[i];
+    for(i=1; i<=n; i++)
+        cin>>b[i];
+
+    for(i=1; i<=k; i++)
+    {
+        cin>>x;
+        for(j=1; j<=n; j++)
+        {
+            if(b[j]==b[x] && a[j]>a[x])
+            {
+                ans++;
+                break;
+            }
+        }
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+// 1121B
+#include<bits/stdc++.h>
+
+using namespace std;
+
+/// Typedef
+typedef long long ll;
+
+#define sc1(a) scanf("%lld",&a)
+#define sc2(a,b) scanf("%lld %lld",&a,&b)
+
+#define pf1(a) printf("%lld\n", a)
+#define pf2(a,b) printf("%lld %lld\n",a,b)
+
+map <ll, ll> mp;
+map <ll, ll>::iterator it;
+
+int main()
+{
+
+    ll tc, num, t = 1, pownum;
+
+    sc1(num);
+
+    ll arr[num];
+
+    for(ll i = 0; i < num; i++)
+        sc1(arr[i]);
+
+    sort(arr, arr + num);
+
+    for(ll i = 0; i < num - 1; i++){
+        for(ll j = i + 1; j < num; j++){
+            mp[arr[i] + arr[j]]++;
+        }
+    }
+
+    ll ans = 0;
+    for(it = mp.begin(); it != mp.end(); it++){
+        ans = max(ans, it->second);
+    }
+
+    pf1(ans);
+
+    return 0;
+}
